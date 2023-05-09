@@ -1,0 +1,15 @@
+
+flutter create --project-name appoficina --org br.com.apps.appoficina --platforms android,ios,web ./appoficina
+
+
+# Run pod outdated to see if a newer version of the Maps SDK for iOS is available.
+pod outdated
+
+flutter pub upgrade --major-versions
+
+cd ios
+pod deintegrate
+rm -f Podfile.lock
+flutter packages get
+pod install --repo-update
+
